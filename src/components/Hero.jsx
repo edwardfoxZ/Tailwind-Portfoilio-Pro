@@ -1,5 +1,5 @@
 import React from "react";
-import profilepic from "../assets/profilepic.png";
+import heroImage from "../assets/profilepic.png";
 import notebookL from "../assets/notebookL.png";
 import notebookM from "../assets/notebookM.png";
 import mobileR from "../assets/mobileR.png";
@@ -8,58 +8,50 @@ import { TypeAnimation } from "react-type-animation";
 export const Hero = () => {
   return (
     <div
-      className="relative grid sm:grid-cols-3 gap-8 max-w-[1200px] md:h-[70vh] mx-auto py-8 overflow-hidden md:overflow-visible"
-      id="hero"
+      className="relative mt-20 md:mt-0 grid sm:grid-cols-3 gap-8 max-w-[1200px] md:h-[70vh]
+             mx-auto my-32 overflow-hidden md:overflow-visible"
+      id="home"
     >
       <img
-        draggable={false}
+        className="hidden md:block absolute z-[-1] w-[400px] bottom-[60px] left-[-170px]"
         src={notebookL}
-        alt="notebookL"
-        className="hidden md:block absolute z-[-1] w-[400px] bottom-0 left-[-170px]"
+        alt=""
       />
       <img
-        draggable={false}
+        className="absolute md:z-[-1] w-[200px] md:w-[400px] bottom-[-90px]  md:bottom-[80px] md:left-[320px]"
         src={notebookM}
-        alt="notebookM"
-        className="absolute z-[-1] w-[400px] -bottom-[190px] md:bottom-0 md:left-[320px]"
+        alt=""
       />
       <img
-        draggable={false}
+        className="absolute z-[-1] md:w-[200px] bottom-[500px] left-[450px]"
         src={mobileR}
-        alt="mobileR"
-        className="absolute z-[-1] w-[200px] bottom-[600px] left-[450px]"
+        alt=""
       />
 
-      <div className="absolute right-0 bottom-[15px] w-full mx-auto">
-        <div className="flex flex-row justify-end items-center">
-          <div className="w-1/2 glass p-8 text-white my-5 z-20 backdrop-blur-sm space-y-16">
-            <h1>
-              <p className="text-xl md:text-6xl font-bold">I&apos;m</p>
-              <TypeAnimation
-                className="text-xl md:text-6xl font-semibold"
-                sequence={[
-                  "Frontend Dev",
-                  1000,
-                  "Webdesigner",
-                  1000,
-                  "Consultant",
-                  1000,
-                ]}
-              />
-            </h1>
-            <p className="text-sm md:text-xl">
-              My name is Harald Hardrada and I have 5+ years experience in web
-              development.
-            </p>
-          </div>
-
-          <img
-            draggable={false}
-            src={profilepic}
-            alt="profilepic"
-            className="w-[300px] md:w-[600px]"
+      <div className="glass px-5 col-span-2 my-auto z-[-1]">
+        <h1 className="text-white text-4xl sm:text-5xl lg:text-8xl font-extrabold p-4 md:p-0">
+          <p className="md:mb-4 text-gray-500">I´m a</p>
+          <TypeAnimation
+            sequence={[
+              "Frontend Dev",
+              1000,
+              "Webdesigner",
+              1000,
+              "Consultant",
+              1000,
+            ]}
+            wrapper="span"
+            speed={50}
+            repeat={Infinity}
           />
-        </div>
+        </h1>
+        <p className="font-bold mb-6 md:mb-0 md:my-6 text-sm sm:text-lg lg:text-xl max-w-[280px] p-4 md:p-0 md:max-w-[600px] ml-1 text-gray-300">
+          My name is John Doe and I have 5+ years experience in web development.
+        </p>
+      </div>
+
+      <div className="absolute bottom-0 right-0 w-[250px] lg:w-[600px] z-[-1]">
+        <img src={heroImage} alt="" />
       </div>
     </div>
   );
